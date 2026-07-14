@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package forge.v1;
+
+option go_package = "github.com/connorg45/forge-queue/proto/forgepb";
+
+import "google/protobuf/struct.proto";
+
+service Forge {
+  rpc SubmitJob(google.protobuf.Struct) returns (google.protobuf.Struct);
+  rpc GetJob(google.protobuf.Struct) returns (google.protobuf.Struct);
+  rpc CancelJob(google.protobuf.Struct) returns (google.protobuf.Struct);
+  rpc GetQueueStats(google.protobuf.Struct) returns (google.protobuf.Struct);
+  rpc ListDLQ(google.protobuf.Struct) returns (google.protobuf.Struct);
+  rpc RequeueDLQ(google.protobuf.Struct) returns (google.protobuf.Struct);
+}
